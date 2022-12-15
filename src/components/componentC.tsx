@@ -16,7 +16,10 @@ type Inputs = {
 
 const ComponentC = ({inputState,setInputState, flag, setFlag}:propsType) => {
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        const JsonObj = JSON.stringify(data);
+        return JsonObj;
+    };
 
 
     return (
